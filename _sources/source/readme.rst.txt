@@ -17,10 +17,13 @@ For your convenience, we provide a copy of this citation in `bibtex`_ format.
 .. _bibtex: https://raw.githubusercontent.com/DalhousieAI/pytorch-logit-logic/master/CITATION.bib
 
 
-Example usage::
+Example usage:
+
+.. code:: python
 
     from pytorch_logit_logic import actfun_name2factory
     from torch import nn
+
 
     class MLP(nn.Module):
         """
@@ -47,6 +50,7 @@ Example usage::
             1D activation functions like ReLU, and ``2`` for GLU, MaxOut, and
             NAIL_OR.
         """
+
         def __init__(
             self,
             in_channels,
@@ -91,12 +95,12 @@ Example usage::
             return x
 
 
-        model = MLP(
-            in_channels=512,
-            out_channels=10,
-            n_layer=2,
-            actfun="nail_or",
-        )
+    model = MLP(
+        in_channels=512,
+        out_channels=10,
+        n_layer=2,
+        actfun="nail_or",
+    )
 
 
 
