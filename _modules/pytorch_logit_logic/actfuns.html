@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pytorch_logit_logic.actfuns &#8212; pytorch-logit-logic 0.1.dev0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rtd_sphinx_search.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/js/rtd_sphinx_search.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">pytorch-logit-logic 0.1.dev0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../source/packages/modules.html">
+   API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../source/packages/pytorch_logit_logic.html">
+     pytorch_logit_logic package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../source/packages/pytorch_logit_logic.actfuns.html">
+       pytorch_logit_logic.actfuns module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../source/changelog.html">
+   Changelog
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../py-modindex.html">
+   Module Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Source code for pytorch_logit_logic.actfuns</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Probabilistic Boolean logic activation functions.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+
+<div class="viewcode-block" id="maxd"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.maxd">[docs]</a><span class="k">def</span> <span class="nf">maxd</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span></div>
+
+
+<div class="viewcode-block" id="mind"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.mind">[docs]</a><span class="k">def</span> <span class="nf">mind</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span></div>
+
+
+<div class="viewcode-block" id="logistic_and"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and">[docs]</a><span class="k">def</span> <span class="nf">logistic_and</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="logistic_or"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or">[docs]</a><span class="k">def</span> <span class="nf">logistic_or</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">):</span>
+    <span class="n">p_inv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p_inv</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">p_inv</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="logistic_xnor_2d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_xnor_2d">[docs]</a><span class="k">def</span> <span class="nf">logistic_xnor_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">):</span>
+    <span class="n">pz</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">pz</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pz</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span></div>
+
+
+<span class="n">logistic_parity_2d</span> <span class="o">=</span> <span class="n">logistic_xnor_2d</span>
+
+
+<div class="viewcode-block" id="logistic_parity_3d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity_3d">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity_3d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">):</span>
+    <span class="c1"># Probability that the number of active arguments is even</span>
+    <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span>  <span class="c1"># 0 active</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span>  <span class="c1"># 2 active: (1, 2)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span>  <span class="c1"># 2 active: (1, 3)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span>  <span class="c1"># 2 active: (2, 3)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="logistic_parity_4d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity_4d">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity_4d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">):</span>
+    <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+    <span class="c1"># Probability that the number of active arguments is even</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span>  <span class="c1"># 0 active</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span>  <span class="c1"># 2 active: (1, 2)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span>  <span class="c1"># 2 active: (1, 3)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span>  <span class="c1"># 2 active: (2, 3)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p4</span>  <span class="c1"># 2 active: (1, 4)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p4</span>  <span class="c1"># 2 active: (2, 4)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="n">p4</span>  <span class="c1"># 2 active: (3, 4)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="n">p4</span>  <span class="c1"># 4 active: (1, 2, 3, 4)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="logistic_parity_5d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity_5d">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity_5d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">):</span>
+    <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+    <span class="c1"># Probability that the number of active arguments is even</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 0 active</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 2 active: (1, 2)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 2 active: (1, 3)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 2 active: (2, 3)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 2 active: (1, 4)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 2 active: (2, 4)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 2 active: (3, 4)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 2 active: (1, 5)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 2 active: (2, 5)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 2 active: (3, 5)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 2 active: (4, 5)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p5</span><span class="p">)</span>  <span class="c1"># 4 active: (1, 2, 3, 4)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p4</span><span class="p">)</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 4 active: (1, 2, 3, 5)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 4 active; (1, 2, 4, 5)</span>
+        <span class="o">+</span> <span class="n">p1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 4 active: (1, 3, 4, 5)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">*</span> <span class="n">p3</span> <span class="o">*</span> <span class="n">p4</span> <span class="o">*</span> <span class="n">p5</span>  <span class="c1"># 4 active; (2, 3, 4, 5)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">,</span> <span class="n">eps</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="logistic_parity"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_3d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_4d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_5d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span></div>
+
+
+<div class="viewcode-block" id="logistic_and_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_and_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># mean and stdev values determined empirically, average over 1.2B sample arguments</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.29895</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.94834</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.27741</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.00907</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.1575</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.09799</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.9979</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.19478</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">logistic_and</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">sub_</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_or_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_or_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># mean and stdev values determined empirically, average over 1.2B sample arguments</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">1.29895</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.94834</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">2.27741</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.00907</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.1575</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.09799</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.9979</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.19478</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">logistic_or</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">sub_</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_parity_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># stdev values determined empirically, average over 1.2B sample arguments</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="mf">0.36641</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_3d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="mf">0.14725</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_4d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="mf">0.06062</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logistic_parity_5d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="mf">0.025145</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span></div>
+
+
+<div class="viewcode-block" id="logistic_and_approx_2d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and_approx_2d">[docs]</a><span class="k">def</span> <span class="nf">logistic_and_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">),</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">),</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_or_approx_2d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or_approx_2d">[docs]</a><span class="k">def</span> <span class="nf">logistic_or_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">),</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">),</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_xnor_approx_2d"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_xnor_approx_2d">[docs]</a><span class="k">def</span> <span class="nf">logistic_xnor_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">abs</span><span class="p">(),</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_and_approx_2d_normalized_old"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and_approx_2d_normalized_old">[docs]</a><span class="k">def</span> <span class="nf">logistic_and_approx_2d_normalized_old</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># divide by math.sqrt((1 + 2.5 * np.pi) / (2 * math.pi))</span>
+    <span class="k">return</span> <span class="n">logistic_and_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">0.8424043984960415</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_or_approx_2d_normalized_old"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or_approx_2d_normalized_old">[docs]</a><span class="k">def</span> <span class="nf">logistic_or_approx_2d_normalized_old</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># divide by math.sqrt((1 + 2.5 * np.pi) / (2 * math.pi))</span>
+    <span class="k">return</span> <span class="n">logistic_or_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">0.8424043984960415</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_and_approx_2d_normalized2"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and_approx_2d_normalized2">[docs]</a><span class="k">def</span> <span class="nf">logistic_and_approx_2d_normalized2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># Subtract mean of -1/math.sqrt(2*math.pi)-1/(2*math.sqrt(math.pi))</span>
+    <span class="c1"># Divide by stdev of math.sqrt(5/4-1/(math.sqrt(2)*math.pi)-1/(4*math.pi))</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">logistic_and_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">add_</span><span class="p">(</span><span class="mf">0.6810370721753108</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="mf">0.9722877400310959</span><span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_or_approx_2d_normalized2"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or_approx_2d_normalized2">[docs]</a><span class="k">def</span> <span class="nf">logistic_or_approx_2d_normalized2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># Subtract mean of 1/math.sqrt(2*math.pi)+1/(2*math.sqrt(math.pi))</span>
+    <span class="c1"># Divide by stdev of math.sqrt(5/4-1/(math.sqrt(2)*math.pi)-1/(4*math.pi))</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">logistic_or_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">sub_</span><span class="p">(</span><span class="mf">0.6810370721753108</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="mf">0.9722877400310959</span><span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_xnor_approx_2d_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_xnor_approx_2d_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_xnor_approx_2d_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># divide by math.sqrt(1 - 2 / math.pi)</span>
+    <span class="k">return</span> <span class="n">logistic_xnor_approx_2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">1.658896739970306</span><span class="p">)</span></div>
+
+
+<span class="n">logistic_xnor_approx_2d_normalized2</span> <span class="o">=</span> <span class="n">logistic_xnor_approx_2d_normalized</span>
+
+
+<div class="viewcode-block" id="logistic_and_approx"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and_approx">[docs]</a><span class="k">def</span> <span class="nf">logistic_and_approx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="n">out_neg</span> <span class="o">=</span> <span class="o">-</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="n">out_neg</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">out_neg</span><span class="p">,</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_or_approx"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or_approx">[docs]</a><span class="k">def</span> <span class="nf">logistic_or_approx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="n">out_pos</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="n">out_pos</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">out_pos</span><span class="p">,</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_parity_approx"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity_approx">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity_approx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">])</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">abs</span><span class="p">(),</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">type_as</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_and_approx_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_and_approx_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_and_approx_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># mu and sigma values determined empirically, average over 1.2B sample arguments</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># Values determined analytically</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.6810370721753108</span>  <span class="c1"># -1/sqrt(2*pi)-1/(2*sqrt(pi))</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.9722877400310959</span>  <span class="c1"># sqrt(5/4-1/(sqrt(2)*pi)-1/(4*pi))</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.15497</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.0701</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5794</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.1929</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.988</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.3167</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="c1"># average over 600M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.191</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.6524</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="c1"># average over 300M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.7873</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">2.0225</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="c1"># average over 300M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.383</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">2.335</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">24</span><span class="p">:</span>
+        <span class="c1"># average over 200M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.574</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">2.860</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="c1"># average over 200M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mf">12.766</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">3.302</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">logistic_and_approx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">sub_</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_or_approx_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_or_approx_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_or_approx_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># mu and sigma values determined empirically, average over 1.2B sample arguments</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># Values determined analytically</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">0.6810370721753108</span>  <span class="c1"># 1/sqrt(2*pi)+1/(2*sqrt(pi))</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.9722877400310959</span>  <span class="c1"># sqrt(5/4-1/(sqrt(2)*pi)-1/(4*pi))</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">1.15497</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.0701</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">1.5794</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.1929</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">1.988</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.3167</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="c1"># average over 600M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.191</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">1.6524</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="c1"># average over 300M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">4.7873</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">2.0225</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="c1"># average over 300M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">6.383</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">2.335</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">24</span><span class="p">:</span>
+        <span class="c1"># average over 200M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">9.574</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">2.860</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="c1"># average over 200M samples</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="mf">12.766</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">3.302</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">logistic_or_approx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">sub_</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="logistic_parity_approx_normalized"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.logistic_parity_approx_normalized">[docs]</a><span class="k">def</span> <span class="nf">logistic_parity_approx_normalized</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+    <span class="c1"># mu and sigma values determined empirically, average over 1.2B sample arguments</span>
+    <span class="k">if</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># Value determined analytically</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.6028102749890869</span>  <span class="c1"># sqrt(1 - 2 / pi)</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.4391</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.3474</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.2882</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="c1"># average over 600M samples</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.1918</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="c1"># average over 300M samples</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.1332</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="c1"># average over 300M samples</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.1022</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">24</span><span class="p">:</span>
+        <span class="c1"># average over 200M samples</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.06982</span>
+    <span class="k">elif</span> <span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="c1"># average over 200M samples</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.05305</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported k value </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">logistic_parity_approx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">div_</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="unroll_k"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.unroll_k">[docs]</a><span class="k">def</span> <span class="nf">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">%</span> <span class="n">k</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Argument </span><span class="si">{}</span><span class="s2"> has shape </span><span class="si">{}</span><span class="s2">. Dimension </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">, which is not&quot;</span>
+            <span class="s2">&quot; divisible by </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">k</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">shp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">d_a</span> <span class="o">=</span> <span class="n">d</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span>
+    <span class="n">shp</span> <span class="o">=</span> <span class="n">shp</span><span class="p">[:</span><span class="n">d_a</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">d_a</span><span class="p">]</span> <span class="o">//</span> <span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">shp</span><span class="p">[</span><span class="n">d_a</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">*</span><span class="n">shp</span><span class="p">)</span>
+    <span class="n">d_new</span> <span class="o">=</span> <span class="n">d</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span></div>
+
+
+<div class="viewcode-block" id="GLU"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.GLU">[docs]</a><span class="k">class</span> <span class="nc">GLU</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">GLU</span><span class="p">):</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">divisor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">feature_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span></div>
+
+
+<div class="viewcode-block" id="HOActfun"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.HOActfun">[docs]</a><span class="k">class</span> <span class="nc">HOActfun</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dim</span> <span class="o">=</span> <span class="n">dim</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">divisor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">feature_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span></div>
+
+
+<div class="viewcode-block" id="MaxOut"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MaxOut">[docs]</a><span class="k">class</span> <span class="nc">MaxOut</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="MaxOut.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MaxOut.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">d_new</span><span class="p">)</span><span class="o">.</span><span class="n">values</span></div></div>
+
+
+<div class="viewcode-block" id="MinOut"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MinOut">[docs]</a><span class="k">class</span> <span class="nc">MinOut</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="MinOut.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MinOut.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">d_new</span><span class="p">)</span><span class="o">.</span><span class="n">values</span></div></div>
+
+
+<div class="viewcode-block" id="SignedGeomeanFunc"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.SignedGeomeanFunc">[docs]</a><span class="k">class</span> <span class="nc">SignedGeomeanFunc</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">Function</span><span class="p">):</span>
+<div class="viewcode-block" id="SignedGeomeanFunc.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.SignedGeomeanFunc.forward">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">keepdim</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="p">):</span>
+        <span class="c1"># Save inputs</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">save_for_backward</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">dim</span> <span class="o">=</span> <span class="n">dim</span> <span class="o">+</span> <span class="nb">input</span><span class="o">.</span><span class="n">ndim</span> <span class="k">if</span> <span class="n">dim</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">dim</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">keepdim</span> <span class="o">=</span> <span class="n">keepdim</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">clamp_grad</span> <span class="o">=</span> <span class="n">clamp_grad</span>
+        <span class="c1"># Compute forward pass</span>
+        <span class="n">prods</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="n">keepdim</span><span class="p">)</span>
+        <span class="n">signs</span> <span class="o">=</span> <span class="n">prods</span><span class="o">.</span><span class="n">sign</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">signs</span> <span class="o">*</span> <span class="n">prods</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">output</span></div>
+
+<div class="viewcode-block" id="SignedGeomeanFunc.backward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.SignedGeomeanFunc.backward">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
+        <span class="p">(</span><span class="nb">input</span><span class="p">,)</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">saved_tensors</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ctx</span><span class="o">.</span><span class="n">keepdim</span><span class="p">:</span>
+            <span class="n">grad_output</span> <span class="o">=</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+
+        <span class="c1"># Re-compute forward pass</span>
+        <span class="n">prods</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">signs</span> <span class="o">=</span> <span class="n">prods</span><span class="o">.</span><span class="n">sign</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">signs</span> <span class="o">*</span> <span class="n">prods</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span>
+
+        <span class="n">grad_inner</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">output</span> <span class="o">/</span> <span class="nb">input</span>
+        <span class="c1"># Remove singularities</span>
+        <span class="n">grad_inner</span><span class="p">[</span><span class="nb">input</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># Clamp large values</span>
+        <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">clamp_grad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">grad_inner</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">grad_inner</span><span class="p">,</span> <span class="o">-</span><span class="n">ctx</span><span class="o">.</span><span class="n">clamp_grad</span><span class="p">,</span> <span class="n">ctx</span><span class="o">.</span><span class="n">clamp_grad</span><span class="p">)</span>
+        <span class="c1"># dy/dx = dy/dz * dz/dx</span>
+        <span class="n">grad_input</span> <span class="o">=</span> <span class="n">grad_output</span> <span class="o">*</span> <span class="n">grad_inner</span>
+
+        <span class="c1"># Need to return None for each non-tensor input to forward</span>
+        <span class="k">return</span> <span class="n">grad_input</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span></div></div>
+
+
+<div class="viewcode-block" id="signed_geomean"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.signed_geomean">[docs]</a><span class="k">def</span> <span class="nf">signed_geomean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">SignedGeomeanFunc</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">keepdim</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SignedGeomean"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.SignedGeomean">[docs]</a><span class="k">class</span> <span class="nc">SignedGeomean</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SignedGeomean</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clamp_grad</span> <span class="o">=</span> <span class="n">clamp_grad</span>
+
+<div class="viewcode-block" id="SignedGeomean.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.SignedGeomean.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">signed_geomean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">clamp_grad</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="IL_AND"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_AND">[docs]</a><span class="k">class</span> <span class="nc">IL_AND</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="IL_AND.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_AND.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_and</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="IL_OR"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_OR">[docs]</a><span class="k">class</span> <span class="nc">IL_OR</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="IL_OR.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_OR.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_or</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="IL_Parity"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_Parity">[docs]</a><span class="k">class</span> <span class="nc">IL_Parity</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="IL_Parity.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_Parity.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_parity</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<span class="n">IL_XNOR</span> <span class="o">=</span> <span class="n">IL_Parity</span>
+
+
+<div class="viewcode-block" id="NIL_AND"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_AND">[docs]</a><span class="k">class</span> <span class="nc">NIL_AND</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="NIL_AND.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_AND.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_and_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="NIL_OR"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_OR">[docs]</a><span class="k">class</span> <span class="nc">NIL_OR</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="NIL_OR.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_OR.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_or_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="NIL_Parity"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_Parity">[docs]</a><span class="k">class</span> <span class="nc">NIL_Parity</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="NIL_Parity.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_Parity.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_parity_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<span class="n">NIL_XNOR</span> <span class="o">=</span> <span class="n">NIL_Parity</span>
+
+
+<div class="viewcode-block" id="AIL_AND"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_AND">[docs]</a><span class="k">class</span> <span class="nc">AIL_AND</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="AIL_AND.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_AND.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_and_approx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AIL_OR"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_OR">[docs]</a><span class="k">class</span> <span class="nc">AIL_OR</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="AIL_OR.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_OR.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_or_approx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AIL_Parity"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_Parity">[docs]</a><span class="k">class</span> <span class="nc">AIL_Parity</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="AIL_Parity.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_Parity.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_parity_approx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<span class="n">AIL_XNOR</span> <span class="o">=</span> <span class="n">AIL_Parity</span>
+
+
+<div class="viewcode-block" id="NAIL_AND"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_AND">[docs]</a><span class="k">class</span> <span class="nc">NAIL_AND</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="NAIL_AND.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_AND.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_and_approx_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="NAIL_OR"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_OR">[docs]</a><span class="k">class</span> <span class="nc">NAIL_OR</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="NAIL_OR.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_OR.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_or_approx_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="NAIL_Parity"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_Parity">[docs]</a><span class="k">class</span> <span class="nc">NAIL_Parity</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+<div class="viewcode-block" id="NAIL_Parity.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_Parity.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logistic_parity_approx_normalized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span></div></div>
+
+
+<span class="n">NAIL_XNOR</span> <span class="o">=</span> <span class="n">NAIL_Parity</span>
+
+
+<div class="viewcode-block" id="MultiActfunDuplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MultiActfunDuplicate">[docs]</a><span class="k">class</span> <span class="nc">MultiActfunDuplicate</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actfuns</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span> <span class="o">=</span> <span class="n">actfuns</span>
+
+<div class="viewcode-block" id="MultiActfunDuplicate.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MultiActfunDuplicate.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">feature_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span></div>
+
+
+<div class="viewcode-block" id="MultiActfunPartition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MultiActfunPartition">[docs]</a><span class="k">class</span> <span class="nc">MultiActfunPartition</span><span class="p">(</span><span class="n">HOActfun</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actfuns</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span> <span class="o">=</span> <span class="n">actfuns</span>
+
+<div class="viewcode-block" id="MultiActfunPartition.forward"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.MultiActfunPartition.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span> <span class="o">%</span> <span class="n">x</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span>  <span class="c1"># Handle negative indexing</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">d_new</span> <span class="o">=</span> <span class="n">unroll_k</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">d_new</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span><span class="p">,</span> <span class="n">xs</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">divisor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actfuns</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span></div>
+
+
+<div class="viewcode-block" id="max_min_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.max_min_duplicate">[docs]</a><span class="k">class</span> <span class="nc">max_min_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">max_min_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([</span><span class="n">maxd</span><span class="p">,</span> <span class="n">mind</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IL_AND_OR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_AND_OR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">IL_AND_OR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IL_AND_OR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([</span><span class="n">logistic_and</span><span class="p">,</span> <span class="n">logistic_or</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IL_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">IL_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IL_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or</span><span class="p">,</span> <span class="n">logistic_parity</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IL_AND_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_AND_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">IL_AND_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IL_AND_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and</span><span class="p">,</span> <span class="n">logistic_or</span><span class="p">,</span> <span class="n">logistic_parity</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NIL_AND_OR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_AND_OR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">NIL_AND_OR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NIL_AND_OR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and_normalized</span><span class="p">,</span> <span class="n">logistic_or_normalized</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NIL_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">NIL_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NIL_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or_normalized</span><span class="p">,</span> <span class="n">logistic_parity_normalized</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NIL_AND_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_AND_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">NIL_AND_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NIL_AND_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">logistic_and_normalized</span><span class="p">,</span>
+                <span class="n">logistic_or_normalized</span><span class="p">,</span>
+                <span class="n">logistic_parity_normalized</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AIL_AND_OR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_AND_OR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">AIL_AND_OR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AIL_AND_OR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and_approx</span><span class="p">,</span> <span class="n">logistic_or_approx</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AIL_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">AIL_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AIL_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or_approx</span><span class="p">,</span> <span class="n">logistic_parity_approx</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AIL_AND_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_AND_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">AIL_AND_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AIL_AND_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and_approx</span><span class="p">,</span> <span class="n">logistic_or_approx</span><span class="p">,</span> <span class="n">logistic_parity_approx</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NAIL_AND_OR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_AND_OR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">NAIL_AND_OR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NAIL_AND_OR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and_approx_normalized</span><span class="p">,</span> <span class="n">logistic_or_approx_normalized</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NAIL_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">NAIL_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NAIL_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or_approx_normalized</span><span class="p">,</span> <span class="n">logistic_parity_approx_normalized</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NAIL_AND_OR_XNOR_duplicate"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_AND_OR_XNOR_duplicate">[docs]</a><span class="k">class</span> <span class="nc">NAIL_AND_OR_XNOR_duplicate</span><span class="p">(</span><span class="n">MultiActfunDuplicate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NAIL_AND_OR_XNOR_duplicate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">logistic_and_approx_normalized</span><span class="p">,</span>
+                <span class="n">logistic_or_approx_normalized</span><span class="p">,</span>
+                <span class="n">logistic_parity_approx_normalized</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="max_min_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.max_min_partition">[docs]</a><span class="k">class</span> <span class="nc">max_min_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">max_min_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([</span><span class="n">maxd</span><span class="p">,</span> <span class="n">mind</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IL_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">IL_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IL_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or</span><span class="p">,</span> <span class="n">logistic_parity</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IL_AND_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.IL_AND_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">IL_AND_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IL_AND_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and</span><span class="p">,</span> <span class="n">logistic_or</span><span class="p">,</span> <span class="n">logistic_parity</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NIL_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">NIL_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NIL_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or_normalized</span><span class="p">,</span> <span class="n">logistic_parity_normalized</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NIL_AND_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NIL_AND_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">NIL_AND_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NIL_AND_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">logistic_and_normalized</span><span class="p">,</span>
+                <span class="n">logistic_or_normalized</span><span class="p">,</span>
+                <span class="n">logistic_parity_normalized</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AIL_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">AIL_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AIL_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or_approx</span><span class="p">,</span> <span class="n">logistic_parity_approx</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AIL_AND_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.AIL_AND_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">AIL_AND_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">AIL_AND_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_and_approx</span><span class="p">,</span> <span class="n">logistic_or_approx</span><span class="p">,</span> <span class="n">logistic_parity_approx</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NAIL_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">NAIL_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NAIL_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">logistic_or_approx_normalized</span><span class="p">,</span> <span class="n">logistic_parity_approx_normalized</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NAIL_AND_OR_XNOR_partition"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.NAIL_AND_OR_XNOR_partition">[docs]</a><span class="k">class</span> <span class="nc">NAIL_AND_OR_XNOR_partition</span><span class="p">(</span><span class="n">MultiActfunPartition</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NAIL_AND_OR_XNOR_partition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">logistic_and_approx_normalized</span><span class="p">,</span>
+                <span class="n">logistic_or_approx_normalized</span><span class="p">,</span>
+                <span class="n">logistic_parity_approx_normalized</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<span class="n">_ACT_LAYER_LOGICAL</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;max&quot;</span><span class="p">:</span> <span class="n">MaxOut</span><span class="p">,</span>
+    <span class="s2">&quot;maxout&quot;</span><span class="p">:</span> <span class="n">MaxOut</span><span class="p">,</span>
+    <span class="s2">&quot;signedgeomean&quot;</span><span class="p">:</span> <span class="n">SignedGeomean</span><span class="p">,</span>
+    <span class="s2">&quot;signedgeomean_clamp2&quot;</span><span class="p">:</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">SignedGeomean</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="s2">&quot;signedgeomean_clamp10&quot;</span><span class="p">:</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">SignedGeomean</span><span class="p">,</span> <span class="n">clamp_grad</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+    <span class="s2">&quot;il_and&quot;</span><span class="p">:</span> <span class="n">IL_AND</span><span class="p">,</span>
+    <span class="s2">&quot;il_or&quot;</span><span class="p">:</span> <span class="n">IL_OR</span><span class="p">,</span>
+    <span class="s2">&quot;il_xnor&quot;</span><span class="p">:</span> <span class="n">IL_XNOR</span><span class="p">,</span>
+    <span class="s2">&quot;nil_and&quot;</span><span class="p">:</span> <span class="n">NIL_AND</span><span class="p">,</span>
+    <span class="s2">&quot;nil_or&quot;</span><span class="p">:</span> <span class="n">NIL_OR</span><span class="p">,</span>
+    <span class="s2">&quot;nil_xnor&quot;</span><span class="p">:</span> <span class="n">NIL_XNOR</span><span class="p">,</span>
+    <span class="s2">&quot;ail_and&quot;</span><span class="p">:</span> <span class="n">AIL_AND</span><span class="p">,</span>
+    <span class="s2">&quot;ail_or&quot;</span><span class="p">:</span> <span class="n">AIL_OR</span><span class="p">,</span>
+    <span class="s2">&quot;ail_xnor&quot;</span><span class="p">:</span> <span class="n">AIL_XNOR</span><span class="p">,</span>
+    <span class="s2">&quot;nail_and&quot;</span><span class="p">:</span> <span class="n">NAIL_AND</span><span class="p">,</span>
+    <span class="s2">&quot;nail_or&quot;</span><span class="p">:</span> <span class="n">NAIL_OR</span><span class="p">,</span>
+    <span class="s2">&quot;nail_xnor&quot;</span><span class="p">:</span> <span class="n">NAIL_XNOR</span><span class="p">,</span>
+    <span class="s2">&quot;max_min_dup&quot;</span><span class="p">:</span> <span class="n">max_min_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;il_and_or_dup&quot;</span><span class="p">:</span> <span class="n">IL_AND_OR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;il_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">IL_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;il_and_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">IL_AND_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;nil_and_or_dup&quot;</span><span class="p">:</span> <span class="n">NIL_AND_OR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;nil_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">NIL_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;nil_and_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">NIL_AND_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;ail_and_or_dup&quot;</span><span class="p">:</span> <span class="n">AIL_AND_OR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;ail_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">AIL_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;ail_and_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">AIL_AND_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;nail_and_or_dup&quot;</span><span class="p">:</span> <span class="n">NAIL_AND_OR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;nail_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">NAIL_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;nail_and_or_xnor_dup&quot;</span><span class="p">:</span> <span class="n">NAIL_AND_OR_XNOR_duplicate</span><span class="p">,</span>
+    <span class="s2">&quot;max_min_part&quot;</span><span class="p">:</span> <span class="n">max_min_partition</span><span class="p">,</span>
+    <span class="s2">&quot;il_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">IL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;il_and_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">IL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nil_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">NIL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nil_and_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">NIL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;ail_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">AIL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;ail_and_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">AIL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nail_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">NAIL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nail_and_or_xnor_part&quot;</span><span class="p">:</span> <span class="n">NAIL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;max_min_part_fixed&quot;</span><span class="p">:</span> <span class="n">max_min_partition</span><span class="p">,</span>
+    <span class="s2">&quot;il_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">IL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;il_and_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">IL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nil_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">NIL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nil_and_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">NIL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;ail_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">AIL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;ail_and_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">AIL_AND_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nail_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">NAIL_OR_XNOR_partition</span><span class="p">,</span>
+    <span class="s2">&quot;nail_and_or_xnor_part_fixed&quot;</span><span class="p">:</span> <span class="n">NAIL_AND_OR_XNOR_partition</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="actfun_name2factory"><a class="viewcode-back" href="../../source/packages/pytorch_logit_logic.actfuns.html#pytorch_logit_logic.actfuns.actfun_name2factory">[docs]</a><span class="k">def</span> <span class="nf">actfun_name2factory</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">lower_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">lower_name</span> <span class="o">==</span> <span class="s2">&quot;relu&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;ReLU only supports k=1, not </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span>
+    <span class="k">elif</span> <span class="n">lower_name</span> <span class="o">==</span> <span class="s2">&quot;glu&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;GLU only supports k=2, not </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">GLU</span>
+    <span class="k">elif</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_ACT_LAYER_LOGICAL</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Higher order activations only support k&gt;=2, not </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">_ACT_LAYER_LOGICAL</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span> <span class="ow">or</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;torch.nn activations only support k=1, not </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported actfun: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></div>
+</pre></div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Scott C. Lowe<br/>
+  
+      &copy; Copyright 2022, Scott C. Lowe.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

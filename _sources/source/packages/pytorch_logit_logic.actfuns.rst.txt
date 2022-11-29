@@ -1,0 +1,7 @@
+pytorch\_logit\_logic.actfuns module
+====================================
+
+.. automodule:: pytorch_logit_logic.actfuns
+   :members:
+   :undoc-members:
+   :show-inheritance:

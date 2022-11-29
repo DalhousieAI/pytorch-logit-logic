@@ -1,0 +1,15 @@
+pytorch\_logit\_logic package
+=============================
+
+.. automodule:: pytorch_logit_logic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pytorch_logit_logic.actfuns
