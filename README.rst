@@ -12,6 +12,11 @@ This provides the activation functions used in our paper:
 .. _doi: https://www.doi.org/10.48550/arxiv.2110.11940
 
 
+For your convenience, we provide a copy of this citation in `bibtex`_ format.
+
+.. _bibtex: https://raw.githubusercontent.com/DalhousieAI/pytorch-logit-logic/master/CITATION.bib
+
+
 Example usage:
 
 .. code:: python
