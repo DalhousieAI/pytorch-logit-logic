@@ -275,6 +275,87 @@ equivalent to probabilistic Boolean logic-gates AND, OR, and XNOR for independen
 <div><p>SC Lowe, R Earle, J d’Eon, T Trappenberg, S Oore (2022). Logical Activation Functions: Logit-space equivalents of Probabilistic Boolean Operators. In <em>Advances in Neural Information Processing Systems</em>, volume 36.
 doi: <a class="reference external" href="https://www.doi.org/10.48550/arxiv.2110.11940">10.48550/arxiv.2110.11940</a>.</p>
 </div></blockquote>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pytorch_logit_logic</span> <span class="kn">import</span> <span class="n">actfun_name2factory</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A multi-layer perceptron which supports higher-dimensional activations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    in_channels : int</span>
+<span class="sd">        Number of input channels.</span>
+<span class="sd">    out_channels : int</span>
+<span class="sd">        Number of output channels.</span>
+<span class="sd">    n_layer : int, default=1</span>
+<span class="sd">        Number of hidden layers.</span>
+<span class="sd">    hidden_width : int, optional</span>
+<span class="sd">        Pre-activation width. Default: same as ``in_channels``.</span>
+<span class="sd">        Note that the actual pre-act width used may differ by rounding to</span>
+<span class="sd">        the nearest integer that is divisible by the activation function&#39;s</span>
+<span class="sd">        divisor.</span>
+<span class="sd">    actfun : str, default=&quot;ReLU&quot;</span>
+<span class="sd">        Name of activation function to use.</span>
+<span class="sd">    actfun_k : int, optional</span>
+<span class="sd">        Dimensionality of the activation function. Default is the lowest</span>
+<span class="sd">        ``k`` that the activation function supports, i.e. ``1`` for regular</span>
+<span class="sd">        1D activation functions like ReLU, and ``2`` for GLU, MaxOut, and</span>
+<span class="sd">        NAIL_OR.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">in_channels</span><span class="p">,</span>
+        <span class="n">out_channels</span><span class="p">,</span>
+        <span class="n">n_layer</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">hidden_width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">actfun</span><span class="o">=</span><span class="s2">&quot;ReLU&quot;</span><span class="p">,</span>
+        <span class="n">actfun_k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># Create a factory that generates objects that perform this activation</span>
+        <span class="n">actfun_factory</span> <span class="o">=</span> <span class="n">actfun_name2factory</span><span class="p">(</span><span class="n">actfun</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">actfun_k</span><span class="p">)</span>
+        <span class="c1"># Get the divisor and space reduction factors for this activation</span>
+        <span class="c1"># function. The pre-act needs to be divisible by the divisor, and</span>
+        <span class="c1"># the activation will change the channel dimension by feature_factor.</span>
+        <span class="n">_actfun</span> <span class="o">=</span> <span class="n">actfun_factory</span><span class="p">()</span>
+        <span class="n">divisor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_actfun</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">feature_factor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_actfun</span><span class="p">,</span> <span class="s2">&quot;feature_factor&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">hidden_width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">hidden_width</span> <span class="o">=</span> <span class="n">in_channels</span>
+
+        <span class="c1"># Ensure the hidden width is divisible by the divisor</span>
+        <span class="n">hidden_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">hidden_width</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">))</span> <span class="o">*</span> <span class="n">divisor</span><span class="p">)</span>
+
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">n_current</span> <span class="o">=</span> <span class="n">in_channels</span>
+        <span class="k">for</span> <span class="n">i_layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_layer</span><span class="p">):</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">n_current</span><span class="p">,</span> <span class="n">hidden_width</span><span class="p">))</span>
+            <span class="n">n_current</span> <span class="o">=</span> <span class="n">hidden_width</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actfun_factory</span><span class="p">())</span>
+            <span class="n">n_current</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">n_current</span> <span class="o">*</span> <span class="n">feature_factor</span><span class="p">))</span>
+            <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layer</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">n_current</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">(</span>
+        <span class="n">in_channels</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+        <span class="n">out_channels</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">n_layer</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">actfun</span><span class="o">=</span><span class="s2">&quot;nail_or&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
 
