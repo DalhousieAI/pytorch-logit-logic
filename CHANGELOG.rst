@@ -1,7 +1,7 @@
 Changelog
 =========
 
-All notable changes to package_name will be documented here.
+All notable changes to pytorch-logit-logic will be documented here.
 
 The format is based on `Keep a Changelog`_, and this project adheres to `Semantic Versioning`_.
 
@@ -11,8 +11,8 @@ The format is based on `Keep a Changelog`_, and this project adheres to `Semanti
 Categories for changes are: Added, Changed, Deprecated, Removed, Fixed, Security.
 
 
-Version `0.1.0 <https://github.com/your_organisation/package_name/tree/0.1.0>`__
---------------------------------------------------------------------------------
+Version `0.1.0 <https://github.com/DalhousieAI/pytorch_logit_logic/tree/0.1.0>`__
+---------------------------------------------------------------------------------
 
 Release date: YYYY-MM-DD.
 Initial release (to be released).
